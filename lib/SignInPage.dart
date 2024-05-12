@@ -10,18 +10,44 @@ class SignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black87,
+      backgroundColor: Color(0xFF000000),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
-              child: Text("Sign In with Google"),
+            Text(
+              "Welcome",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 36,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 30),
+            ElevatedButton.icon(
+              icon: Icon(Icons.account_circle),
+              label: Text("Sign In with Google"),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.white,
+                onPrimary: Color(0xFF0D47A1),
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
               onPressed: () => signInWithGoogle(context),
             ),
             SizedBox(height: 16.0),
-            ElevatedButton(
-              child: Text("Sign In with Facebook"),
+            ElevatedButton.icon(
+              icon: Icon(Icons.facebook),
+              label: Text("Sign In with Facebook"),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.white,
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
               onPressed: () => signInWithFacebook(context),
             ),
           ],
@@ -31,7 +57,7 @@ class SignInPage extends StatelessWidget {
   }
 
   Future<void> signInWithGoogle(BuildContext context) async {
-    // Implement sign-in with Google here
+
     try {
       final GoogleSignInAccount? googleSignInAccount = await GoogleSignIn().signIn();
 
@@ -58,7 +84,6 @@ class SignInPage extends StatelessWidget {
   }
 
   Future<void> signInWithFacebook(BuildContext context) async {
-    // Implement sign-in with Facebook here
     try {
       final LoginResult loginResult = await FacebookAuth.instance.login();
 
