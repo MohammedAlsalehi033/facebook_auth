@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">faebk_auth</string>
+    <string name="facebook_app_id">1224066105427558</string>
+    <string name="fb_login_protocol_scheme">5f33b5a4a7f51879ad79b8c2c9005b95</string>
+    <string name="facebook_client_token">301745e841b9dd025ca54573fc51bf51</string>
+
+
+</resources>
